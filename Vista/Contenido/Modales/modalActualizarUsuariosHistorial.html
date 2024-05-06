@@ -1,0 +1,181 @@
+<div class="modal fade multi-modal" id="modalActualizarUsuariosHistorial" tabindex="-1" role="dialog" aria-labelledby="modalActualizarUsuariosHistorial"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content">
+
+            <div class="modal-c-tabs">
+
+                <ul class="nav nav-tabs tabs-2 " role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#datosPublicos" role="tab">
+                            <i class="fas fa-user-circle fa-lg mr-1"></i>Personal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#datosCuenta" role="tab">
+                            <i class="fa fa-user-shield fa-lg mr-1"></i>Cuenta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#datosClave" role="tab">
+                            <i class="fa fa-key fa-lg mr-1"></i>Clave</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <form class="tab-pane fade in show active" id="datosPublicos" role="tabpanel">
+                        <div class="modal-body ">
+                            <input type="hidden" id="idUpp" name="idUpp" class="id">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form mb-3">
+                                        <i class="fas fa-id-card fa-lg prefix"></i>
+                                        <input type="text" id="actualizarCedulaUsuario" name="actualizarCedulaUsuario"
+                                            class="form-control validate" aria-describedby="ciInfoUp" onkeypress="return validarSoloNumeros(event);"
+                                            min="1000000" max="99999999" onkeyup="validarCedula  (this);" onpaste="return false">
+                                        <label for="actualizarCedulaUsuario" class="active">CI</label>
+                                        <small id="ciInfoUp" class="info form-text text-muted red-text small">
+                                            La CI debe tener de 7 a 8 digitos.
+                                        </small>
+                                        <small id="ciInfoErUp" class="infoEr form-text text-muted red-text small" style="top:55px;">
+                                            Solo se permiten numeros.
+                                        </small>
+                                        <small id="ciInfoErBDUp" class="infoErBD accordionform-text text-muted red-text small"
+                                            style=" margin: .1rem 2.5rem;">
+                                            Esta CI ya se encuentra registrada.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <div class="md-form">
+                                        <i class="fas fa-user fa-lg prefix"></i>
+                                        <input type="text" id="actualizarNombreUsuario" class="form-control validate"
+                                            maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+" name="actualizarNombreUsuario"
+                                            onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                        <label for="actualizarNombreUsuario" class="active">Nombre</label>
+                                        <small id="nomInfoUp" class="info form-text text-muted red-text small">
+                                            Alerta: No se permiten caracteres especiales ni numeros.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div  class="md-form">
+                                        <input type="text" id="actualizarApellidoUsuario" name="actualizarApellidoUsuario"
+                                            class="form-control" maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+"
+                                            name="apellido" onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                        <label for="actualizarApellidoUsuario" class="active">Apellido</label>
+                                        <small id="apeInfoUp" class="info form-text text-muted red-text small">
+                                            Alerta: No se permiten caracteres especiales ni numeros.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="radiosSex" class="row justify-content-center mb-3">
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="r-true sexoM custom-control-input" id="actualizarSexoUsuarioMasculino"
+                                        name="actualizarSexoUsuario" onclick="validarRadios(this);">
+                                    <label class="custom-control-label" for="actualizarSexoUsuarioMasculino">Masculino</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="r-false sexoF custom-control-input" id="actualizarSexoUsuarioFemenino"
+                                        name="actualizarSexoUsuario"  onclick="validarRadios(this);">
+                                    <label class="r-false custom-control-label" for="actualizarSexoUsuarioFemenino">Femenino</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex col-12 mb-3">
+                            <button type="button" data-dismiss="modal" class="btn btn-outline-primary btn-rounded waves-effect mr-auto">Salir</button>
+                            <button type="button" class="btn btn-primary btn-rounded ml-auto guardar">Guardar</button>
+                        </div>
+                    </form>
+                    <form class="tab-pane fade" id="datosCuenta" role="tabpanel">
+                        <div class="modal-body">
+                            <input type="hidden" id="idUpc" name="idUpc" class="id">
+                            <div class="row">
+                                <div class="col-7">
+                                    <div class="md-form">
+                                        <i class="fas fa-user fa-lg prefix"></i>
+                                        <input type="text" id="actualizarUsuarioUsuario" name="ActualizarUsuarioUsuario"
+                                            class="form-control validate" maxlength="20" minlength="6" pattern="[a-zA-ZñÑ0-9 -_\s]+"
+                                            onkeypress="return validarAlfaNumerico(event)" onpaste="return false">
+                                        <label for="ActualizarUsuarioUsuario" class="active">Usuario</label>
+                                        <small id="userInfoUp" class=" info form-text text-muted red-text small">
+                                            Alerta: Solo se permiten ' - ' , ' _ ' y numeros 0 - 9.
+                                        </small>
+                                        <small id="userInfoBDUp" class="infoDb form-text text-muted red-text small">
+                                            Este nombre de Usuario ya se encuentra en uso.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <select id="actualidarTipoUsuario" name="actualidarTipoUsuario" class="mdb-select md-form ">
+                                        <option value="0" disabled selected>Tipo de usuario</option>
+                                        <option value="1">Administrador</option>
+                                        <option value="2">Ingeniero</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" id="civ">
+                                <div class="col-12">
+                                    <div class="md-form mb-3">
+                                        <i class="fas fa-id-card fa-lg prefix"></i>
+                                        <input type="text" id="actualizarCivUsuario" name="actualizarCivUsuario" class="form-control validate">
+                                        <label for="actualizarCivUsuario" data-success="Correcto" class="active">CIV</label>
+                                        <small id="civInfoBDUp" class="infoBb form-text text-muted red-text small">
+                                            Este civ ya se encuentra asociado a otro usuario.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form mb-3">
+                                        <i class="fas fa-envelope fa-lg prefix"></i>
+                                        <input type="email" id="actualizarCorreoUsuario" name="actualizarCorreoUsuario"
+                                            class="form-control validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                        <label for="actualizarCorreoUsuario" data-success="Correcto" class="active">Email</label>
+                                        <small id="emailInfoBDUp" class="infoBb form-text text-muted red-text small">
+                                            Este email ya se encuentra asociado a otro usuario.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-8">
+                                    <div id="inputTlf" class="md-form">
+                                        <i class="fa fa-phone fa-lg prefix"></i>
+                                        <input type="tel" id="telUser" class="form-control validate">
+                                        <label for="telUser" class="active">Telefono</label>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <select id="tTelUser" name="tTelUser" class="mdb-select md-form ">
+                                        <option value="0" disabled selected>Tipo</option>
+                                        <option value="1">Movil</option>
+                                        <option value="2">Local</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="d-flex col-12 p-0 mt-5">
+                                <button type="button" data-dismiss="modal" class="btn btn-outline-primary btn-rounded waves-effect mr-auto">Salir</button>
+                                <button type="button" class="btn btn-primary btn-rounded ml-auto guardar">Guardar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="tab-pane fade" id="datosClave" role="tabpanel">
+                        <div class="modal-body">
+                            <input type="hidden" id="idUppass" name="idUppass" class="id">
+                            <p>Precione GUARDAR para resetear la clave</p>
+                            <p>NOTA: Por defecto la clave sera la CI del usuario</p>
+                            <div class="d-flex col-12 p-0 mt-5">
+                                <button type="button" data-dismiss="modal" class="btn btn-outline-primary btn-rounded waves-effect mr-auto">Salir</button>
+                                <button type="button" class="btn btn-primary btn-rounded ml-auto guardar">Guardar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

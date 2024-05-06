@@ -1,0 +1,155 @@
+<div class="modal fade" id="modalFinalizarReparacion" tabindex="-1" role="dialog" aria-labelledby="modalFinalizarReparacion"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content-t">
+            <div class="modal-body">
+
+                <form id="FormFinalizarReparacion">
+                    <div class="card">
+                        <div class="card-header transparente">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h4 class="modal-title w-100">Filalizar Reparacion</h4>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="md-form">
+                                        <input type="text" id="codigoObra" name="codigoInspeccion" disabled class="form-control validate">
+                                        <label for="codigoObra">Cod.Inspeccion</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <i class="fa fa-user prefix"></i>
+                                            <input type="text" id="direcObra" name="direcObra" disabled class="form-control validate">
+                                            <label for="direcObra">Director de obra</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form">
+                                        <i class="fa fa-calendar-alt prefix"></i>
+                                        <input placeholder="Selecciona la fecha" type="text" id="fechaRepFinal" class="form-control datepicker">
+                                        <label for="fechaRepFinal" class="active">Fecha de atencion</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="informeRep" name="informeRep" class="md-textarea form-control"
+                                            rows="6"></textarea>
+                                        <label for="informeRep">Informe</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div id="secMatr" class="card-body py-0">
+
+                            <div class="row" id="materiales0">
+
+                                <div class="col-5">
+                                    <select class="mdb-select md-form mat" id="material0" name="material" searchable="Buscar...">
+
+
+                                    </select>
+                                </div>
+
+                                <div class="col-3">
+                                    <div class="md-form">
+                                        <input type="number" id="cantidadMaterial0" name="cantidadMaterial" class="form-control validate"
+                                            max="99999" placeholder="Cantidad">
+                                    </div>
+                                </div>
+
+                                <div class="col-3">
+                                    <select class="mdb-select md-form" id="cUni0" name="cUni">
+                                        <option value="0" disabled selected>Unidad</option>
+                                        <option value="1">Kg</option>
+                                        <option value="2">Tn</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-1">
+                                    <span id="spanAgregarMaterial" class="md-addon md-addon-a">
+                                        <a id="agregarMaterial" mtr="0" class="waves-effect">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <select class="mdb-select md-form" id="ReparacionMaquinarias" name="ReparacionMaquinarias"
+                                                multiple searchable="Buscar...">
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body py-0">
+                                    <div class="md-form">
+                                        <div class="file-field">
+                                            <a class="btn-floating white mt-0 float-left">
+                                                <i class="fa fa-upload" aria-hidden="true" style="color:#790C0C; margin-left: 1rem; margin-top: 1rem;"></i>
+                                                <input id="FinalizarReparacionFile" name="FinalizarReparacionFile" type="file"
+                                                    multiple>
+                                            </a>
+                                            <div class="file-path-wrapper">
+                                                <input id="plaseHolderFileObra" name="plaseHolderFile" class="file-path validate"
+                                                    type="text" placeholder="Surbir imagenes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <button type="button" id="FinalizarReparacion" class="btn  btn-rounded btn-primary waves-effect btn-block">Guardar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

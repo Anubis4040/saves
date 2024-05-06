@@ -1,0 +1,205 @@
+<div class="modal fade" id="modalFinalizarInspeccion" tabindex="-1" role="dialog" aria-labelledby="modalFinalizarInspeccion"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-lg" role="document">
+
+        <div class="modal-content-t">
+            <div class="modal-body">
+
+                <form id="FormFinalizarInspeccion">
+                    <div class="card">
+                        <div class="card-header transparente">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h4 class="modal-title w-100">Filalizar Inspeccion</h4>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="md-form">
+                                        <input type="text" id="codigoPlanificacionInspeccion" name="codigoPlanificacionInspeccion"
+                                            disabled class="form-control validate">
+                                        <label for="codigoPlanificacionInspeccion">Cod.Planificacion</label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form">
+                                        <div class="md-form">
+                                            <i class="fa fa-user prefix"></i>
+                                            <input type="text" id="InspEncargado" name="InspEncargado" disabled class="form-control validate">
+                                            <label for="InspEncargado">Encargado</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form">
+                                        <i class="fa fa-calendar-alt prefix"></i>
+                                        <input placeholder="Selecciona la fecha" type="text" id="finInspFecha" class="form-control datepicker">
+                                        <label for="finInspFecha" class="active">Fecha de atencion</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="refVia" name="refVia" class="md-textarea form-control"
+                                            rows="6"></textarea>
+                                        <label for="refVia">Informe</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+
+                        <div class="card-body">
+
+                            <div class="row">
+
+                                <div class="col-6">
+
+                                    <div class="row">
+
+                                        <div class="col-7">
+                                            <div class="md-form">
+                                                <input type="number" id="largo" name="largo" class="form-control validate" max="9999">
+                                                <label for="largo">Largo</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-5">
+                                            <select class="mdb-select md-form" id="lUni" name="lUni">
+                                                <option value="0" disabled selected>Unidad</option>
+                                                <option value="1">m</option>
+                                                <option value="2">Km</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-6">
+
+                                    <div class="row">
+
+                                        <div class="col-7">
+                                            <div class="md-form">
+                                                <input type="number" id="ancho" name="ancho" class="form-control validate" max="99">
+                                                <label for="ancho">Ancho</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-5">
+                                            <select class="mdb-select md-form" id="aUni" name="aUni">
+                                                <option value="0" disabled selected>Unidad</option>
+                                                <option value="1">m</option>
+                                                <option value="2">Km</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-4">
+
+                        <div class="col-6">
+
+                            <div class="card">
+
+                                <div class="card-body py-0">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <select class="mdb-select md-form" id="InspeccionDanos" multiple searchable="Buscar...">
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <select class="mdb-select md-form" id="InspeccionMateriales" multiple
+                                                searchable="Buscar...">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body py-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <select class="mdb-select md-form" id="InspeccionMaquinarias" multiple
+                                                searchable="Buscar...">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <div class="card-body py-0">
+                                    <div class="md-form">
+                                        <div class="file-field">
+                                            <a class="btn-floating white mt-0 float-left">
+                                                <i class="fa fa-upload" aria-hidden="true" style="color:#790C0C; margin-left: 1rem; margin-top: 1rem;"></i>
+                                                <input id="FinalidarInspeccionsFile" name="FinalidarInspeccionsFile" type="file" multiple>
+                                            </a>
+                                            <div class="file-path-wrapper">
+                                                <input id="plaseHolderFile" name="plaseHolderFile" class="file-path validate"
+                                                    type="text" placeholder="Surbir imagenes">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <button type="button" id="FinalizarInspeccion" class="btn  btn-rounded btn-primary waves-effect btn-block">Guardar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,211 @@
+<div id="modalRegistroSolicitante" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="modalRegistroSolicitante"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content-t">
+            <div class="modal-body">
+
+                <form id="datSolic">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+
+                                <div class="card-header transparente">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h4 class="modal-title w-100">Registrar Solicitante</h4>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <select id="tSoli" name="tSoli" class="mdb-select md-form">
+                                                <option value="1" selected>Organismo Publico</option>
+                                                <option value="2">Organismo Privado</option>
+                                                <option value="3">Particular</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row" id="datosPublicosPrivados">
+                                        <div class="col-6">
+                                            <div class="md-form">
+                                                <i class="fas fa-id-card fa-lg prefix"></i>
+                                                <input type="text" id="rif" name="rif" class="form-control validate">
+                                                <label for="rif">Rif del Organismo</label>
+                                                <small id="rifInfoBD" class=" infoErBD form-text text-muted red-text small">
+                                                    Este RIF ya se encuentra asociado a otro Organismo.
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="nSoli" class="md-form">
+                                                <i class="fas fa-university fa-lg prefix"></i>
+                                                <input type="text" id="nombreOrg" name="nombreOrg" class="form-control validate">
+                                                <label for="nombreOrg">Nombre Del Organismo</label>
+                                                <small id="nombreOrgInfoBD" class=" infoErBD form-text text-muted red-text small">
+                                                    Este Nombre ya se encuentra asociado a otro Organismo.
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+
+                                <div class="card-body">
+
+                                    <h4 class="card-title">Representante</h4>
+
+                                    <div class="row" id="divCancelarRep">
+                                        <div class="d-flex col-12">
+                                            <div class="mr-auto">
+                                                <button id="btnCancelarRep" class="btn btn-sm btn-primary  btn-outline-primary btn-rounded"
+                                                    type="" name="opcion" value="">
+                                                    Cancelar
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="CambiosRep" class="col-12 red-text text-muted">
+                                            <small>Alerta: los datos mostrados en pantalla pertenecen a un Usuario
+                                                y solo
+                                                pueden ser actualizados, Precione CANCELAR para evitar los cambios</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <div class="md-form">
+                                                <i class="fas fa-id-card prefix"></i>
+                                                <input type="hidden" id="idPersonaRep" name="idPersonaRep" class="id">
+                                                <input type="number" id="ciRep" class="form-control form-control-sm validate"
+                                                    name="cedulaPrepresentante" aria-describedby="ciRepInfo" onkeypress="return validarSoloNumeros(event);"
+                                                    min="1000000" max="99999999" onkeyup="validarCedula  (this);"
+                                                    onpaste="return false">
+                                                <label for="ciRep">CI</label>
+                                                <small id="ciRepInfo" class="info form-text text-muted red-text small">
+                                                    La CI debe tener de 7 a 8 digitos.
+                                                </small>
+                                                <small id="ciRepInfoEr" class="infoEr form-text text-muted red-text small"
+                                                    style="top:55px;">
+                                                    Solo se permiten numeros.
+                                                </small>
+                                                <small id="ciRepInfoErBD" class="infoErBD form-text text-muted red-text small">
+                                                    Esta CI pertenece a un Representante.
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="" class="md-form">
+                                                <i class="fas fa-user prefix"></i>
+                                                <input type="text" id="nombreRep" disabled class="form-control form-control-sm validate"
+                                                    maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+" name="nombreRep"
+                                                    onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                                <label for="nombreRep">Nombre</label>
+                                                <small id="nomRepInfo" class=" info form-text text-muted red-text small">
+                                                    Alerta: No se permiten caracteres especiales ni numeros.
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="" class="md-form">
+                                                <input type="text" id="apellidoRep" disabled class="form-control form-control-sm validate"
+                                                    maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+" name="apellidoRep"
+                                                    onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                                <label for="apellidoRep">Apellido</label>
+                                                <small id="apeRepInfo" class="info form-text text-muted red-text small">
+                                                    Alerta: No se permiten caracteres especiales ni numeros.
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="md-form">
+                                                <i class="fas fa-envelope prefix"></i>
+                                                <input type="email" id="correoRep" disabled class="form-control form-control-sm validate"
+                                                    name="correoRep" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                                <label data-success="Correcto" for="correoRep">Correo</label>
+                                                <small id="emailInfoBD" class=" infoErBD form-text text-muted red-text small">
+                                                    Este Correo ya se encuentra asociado a otro Solicitante.
+                                                </small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div id="inputTlf" class="md-form">
+                                                <i class="fa fa-phone fa-lg prefix"></i>
+                                                <input type="tel" id="telSoli" disabled name="telSoli" class="form-control validate tlf"
+                                                    placeholder="0000-000-0000">
+                                                <label for="telSoli" class="active">Telefono</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 ">
+                                            <select id="tTelSoli" name="tTelSoli" class="mdb-select md-form ">
+                                                <option value="0" disabled selected>Tipo</option>
+                                                <option value="1">Movil</option>
+                                                <option value="2">Local</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <input type="text" id="searchMapSoli" placeholder="Buscar" class="controls">
+                            <div id="map-container-1" class="z-depth-1 card" style="height: 20rem"></div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="md-form">
+                                                <input type="text" disabled id="cords" name="cords" class="form-control my-2 validate cords"
+                                                    value="10.465720563200989,-64.18297510928522">
+                                                <label for="cords" class="active">Coordenadas</label>
+                                                <input type="hidden" disabled class="infoUbi" id="infoUbi" name="informacion"
+                                                    value="calle la juventud">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="d-flex col-12 p-0 mt-1">
+                                            <button type="button" data-dismiss="modal" class="btn btn-outline-primary btn-rounded waves-effect mr-auto">Salir</button>
+                                            <button type="button" id="regSolit" class="btn btn-primary btn-rounded ml-auto guardar">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

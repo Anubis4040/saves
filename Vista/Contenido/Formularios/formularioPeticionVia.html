@@ -1,0 +1,134 @@
+<div id="formularioPeticionVia" class="container">
+
+    <div class="row">
+        <h1 class=" mx-auto mb-4">Nueva Peticion</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="text-center card-title mt-3">Solicitante</h5>
+                    <form id="solicitudInspec">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="md-form">
+                                    <i class="fas fa-university prefix"></i>
+                                    <input type="text" id="nameSolic" disabled class="form-control validate">
+                                    <label id="nameSolicLabel" for="nameSolic">Nombre</label>
+                                    <span id="spanSolicitante" class="md-addon md-addon-p" style="left: 90%;">
+                                        <a id="addonSolicitante" class="waves-effect">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="md-form">
+                                    <i class="fas fa-id-card prefix"></i>
+                                    <input type="text" id="code" disabled class="form-control validate">
+                                    <label id="codeLabel" for="code">RIF/CI</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="md-form">
+                                    <i class="fas fa-calendar-alt prefix"></i>
+                                    <input placeholder="Selecciona la fecha" disabled type="text" id="sfecha" class="form-control datepicker">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="md-form">
+                                    <i class="fas fa-map-marked-alt prefix"></i>
+                                    <input type="text" id="Corde" disabled placeholder="Coordenadas" class="form-control validate cords"
+                                        value="10.465720563200989,-64.18297510928522">
+                                    <input type="hidden" id="infoUbiPet" disabled class="infoUbi" name="infoUbiPet"
+                                        value="calle la juventud">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="md-form amber-textarea active-amber-textarea">
+                                    <i class="fa fa-bookmark prefix"></i>
+                                    <textarea type="text" id="motivo" disabled class="md-textarea form-control" rows="6"></textarea>
+                                    <label for="motivo">Motivo</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-7 col-lg-6 col-md-5 my-auto">
+            <input type="text" id="searchMap" placeholder="Buscar" class="controls searchMap">
+            <div id="map-container-2" class="z-depth-1 card" style="height: 30rem"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 d-flex">
+            <button type="button" id="guarsarSolicitud" class=" btn btn-primary btn-rounded ml-auto">Guardar</button>
+        </div>
+    </div>
+
+
+    <div class="row my-4" id="petSoli">
+        <div class="col-12">
+            <h3 class=" text-center">Peticiones del Solicitante</h3>
+            <div class="table-responsive text-nowrap">
+                <table id="historialPeticionesSolicitante" class="table table-hover" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="align-middle">#</th>
+                            <th scope="col" class="align-middle">Cod.Peticion</th>
+                            <th scope="col" class="align-middle">Nombre de la via</th>
+                            <th scope="col" class="align-middle">Estatus</th>
+                            <th scope="col" class="align-middle">Fecha de solicitud</th>
+                            <th scope="col" class="align-middle"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="rows">
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Cod.Peticion</th>
+                            <th>Nombre de la via</th>
+                            <th>Estatus</th>
+                            <th>Fecha de solicitud</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<section id="cargarHistorialSolicitante"></section>
+
+<div class="row mt-3" id="regresarSoli">
+    <div class="co-4 mb-2">
+        <button id="btnRegresarSoli" class="btn btn-sm btn-primary d-flex flex-nowrap align-items-center btn-outline-primary btn-rounded"
+            type="" name="opcion" value="">
+            <i class="fas fa-arrow-left mr-1"></i>Regresar</i>
+        </button>
+    </div>
+</div>
+
+
+<div id="Regresar" class="row">
+    <div class="col-xl-12 d-flex">
+        <button type="button" id="RegresarHistorialPeticiones" class=" btn btn-primary btn-rounded mr-auto">Regresar</button>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+<div id="formulariInspeccionvia" class="container">
+    <div class="row ">
+        <h1 class="mx-auto mb-4">Planificacion de Inspeccion</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-5 col-lg-6 col-md-7">
+            <form id="FormularioPlanificacionInspeccion">
+                <div class="card">
+
+                    <div class="card-body">
+
+                        <h5 class="text-center card-title mt-3">Encargado</h5>
+
+                        <div class="row">
+                            <div class="col-6 ">
+                                <div class="md-form">
+                                    <input id="encargado" disabled name="encargado" class="form-control" type="text">
+                                    <label for="encargado">Principal</label>
+                                    <span id="spanEncargado" class="md-addon md-addon-p" style="left: 90%;">
+                                        <a id="addonEncargado" class="addEncarg waves-effect">
+                                            <i class="fas fa-table"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="md-form">
+                                    <input id="encargadoCi" disabled name="encargadoCi" class="form-control" type="text">
+                                    <label for="encargadoCi">CI</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="text-center card-title t-pet mt-3">Peticion</h5>
+
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="md-form">
+                                    <input id="CodePet" disabled name="CodePet" class="form-control" type="text">
+                                    <label for="CodePet">Cod.Peticion</label>
+                                    <span id="spanCodePet" class="md-addon md-addon-p" style="left: 90%;">
+                                        <a id="addonCodePet" class="waves-effect">
+                                            <i class="fas fa-table"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="col-7">
+                                <div class="md-form">
+                                    <input id="SolicitanteIns" disabled name="SolicitanteIns" class="form-control" type="text">
+                                    <label for="SolicitanteIns">Solicitante</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="md-form">
+                                    <i class="fa fa-map-marked-alt prefix"></i>
+                                    <input disabled type="text" id="nombreVia" class="form-control">
+                                    <label for="nombreVia">Nombre de la via</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="md-form">
+                                    <i class="fa fa-calendar-alt prefix"></i>
+                                    <input placeholder="Selecciona la fecha" disabled type="text" id="planifecha" class="form-control datepicker">
+                                    <label for="planifecha" class="active">Fecha de atencion</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="col-xl-7 col-lg-6 col-md-5 my-auto">
+            <div id="map-container-3" class="z-depth-1 card" style="height: 30rem"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 d-flex">
+            <button type="button" id="guarsarPlanificacionInspeccion" class=" btn btn-primary btn-rounded ml-auto">Guardar</button>
+        </div>
+    </div>
+</div>
+
+<section id="cargarHistorialUsuarios"></section>
+<section id="cargarHistorialPeticiones"></section>
+
+<div class="row mt-3" id="regresarInspeccion">
+    <div class="col-4">
+        <button id="btnRegresarInsp" class="btn btn-sm btn-primary d-flex flex-nowrap align-items-center btn-outline-primary btn-rounded"
+            type="" name="opcion" value="">
+            <i class="fas fa-arrow-left mr-1"></i>Regresar</i>
+        </button>
+    </div>
+</div>

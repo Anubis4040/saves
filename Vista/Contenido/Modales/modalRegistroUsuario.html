@@ -1,0 +1,192 @@
+<div id="modalRegistroUsuario" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalRegistroUsuario"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>Registrar Nuevo Usuario</p>
+                <button class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <form id="nuevoUsuario">
+                        <div class="row" id="divCancelar">
+                            <div class="d-flex col-12">
+                                <div class="mr-auto">
+                                    <button id="btnCancelar" class="btn btn-sm btn-primary  btn-outline-primary btn-rounded"
+                                        type="" name="opcion" value="">
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="Cambios" class="col-12 red-text text-muted">
+                                <small>Alerta: los datos mostrados en pantalla pertenecen a un solicitante y solo
+                                    pueden ser actualizados, Precione CANCELAR para evitar los cambios</small>
+                            </div>
+                        </div>
+                        <div id="datosPersona">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-id-card prefix"></i>
+                                        <input type="number" id="cedulaUsuario" class="form-control form-control-sm validate"
+                                            name="cedulaUsuario" aria-describedby="ciInfo" onkeypress="return validarSoloNumeros(event);"
+                                            min="1000000" max="99999999" onkeyup="validarCedula  (this);" onpaste="return false">
+                                        <label for="cedulaUsuario" id="ci">CI</label>
+                                        <small id="ciInfo" class="info form-text text-muted red-text small">
+                                            La CI debe tener de 7 a 8 digitos.
+                                        </small>
+                                        <small id="ciInfoEr" class="infoEr form-text text-muted red-text small" style="top:55px;">
+                                            Solo se permiten numeros.
+                                        </small>
+                                        <small id="ciInfoErBD" class="infoErBD form-text text-muted red-text small">
+                                            Esta CI pertenece a un Usuario.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="md-form form-sm mb-5">
+                                        <i class="fas fa-user prefix"></i>
+                                        <input type="text" id="nombrePersona" disabled class="form-control form-control-sm validate"
+                                            maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+" name="nombrePersona"
+                                            onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                        <label for="nombrePersona">Nombre</label>
+                                        <small id="nomInfo" class=" info form-text text-muted red-text small">
+                                            Alerta: No se permiten caracteres especiales ni numeros.
+                                        </small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="md-form form-sm mb-5">
+                                        <input type="text" id="apellidoPersona" disabled class="form-control form-control-sm validate"
+                                            maxlength="30" minlength="2" pattern="[a-zA-ZñÑ\s]+" name="apellidoPersona"
+                                            onkeypress="return validarSoloLetras(event)" onpaste="return false">
+                                        <label for="apellidoPersona">Apellido</label>
+                                        <small id="apeInfo" class="info form-text text-muted red-text small">
+                                            Alerta: No se permiten caracteres especiales ni numeros.
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row col-12 justify-content-center mb-4">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" disabled class="r-true custom-control-input" id="sexoUsuarioM"
+                                        name="sexoUsuario" onclick="validarRadios(this);">
+                                    <label class="custom-control-label" for="sexoUsuarioM">Masculino</label>
+                                </div>
+
+                                <div class="custom-control custom-radio ml-1">
+                                    <input type="radio" disabled class="r-false custom-control-input" id="sexoUsuarioF"
+                                        name="sexoUsuario" onclick="validarRadios(this);">
+                                    <label class="custom-control-label" for="sexoUsuarioF">Femenino</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="datosUsuario">
+                            <section id="datos1">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-user-circle prefix"></i>
+                                            <input type="text" id="nombreUsuario" class="form-control form-control-sm validate"
+                                                name="nombreUsuario" maxlength="20" minlength="6" pattern="[a-zA-ZñÑ0-9 -_\s]+"
+                                                onkeypress="return validarAlfaNumerico(event)" onpaste="return false">
+                                            <label for="nombreUsuario">Usuario</label>
+                                            <small id="userInfo" class=" info form-text text-muted red-text small">
+                                                Alerta: Solo se permiten ' - ' , ' _ ' y numeros 0 - 9.
+                                            </small>
+                                            <small id="userInfoBD" class="infoErBD form-text text-muted red-text small">
+                                                Este nombre de Usuario ya se encuentra en uso.
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <select id="tipoUsuario" name="tipoUsuario" class="mdb-select md-form mb-5 mt-3 col-12 ">
+                                            <option value="0" disabled selected>Tipo de usuario</option>
+                                            <option value="1">Administrador</option>
+                                            <option value="2">Ingeniero</option>
+                                        </select>
+                                    </div>
+                                </div>                               
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-envelope prefix"></i>
+                                            <input type="email" id="correoUsuario" class="form-control form-control-sm validate"
+                                                name="correoUsuario" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                                            <label data-success="Correcto" for="correoUsuario">Correo</label>
+                                            <small id="emailInfoBD" class=" infoErBD form-text text-muted red-text small">
+                                                Este email ya se encuentra asociado a otro usuario.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section id="datos2">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-lock prefix"></i>
+                                            <input type="password" id="claveUsuario" class="form-control form-control-sm validate"
+                                                name="claveUsuario" maxlength="20" minlength="6" onpaste="return false">
+                                            <label for="claveUsuario">Clave</label>
+                                            <span id="spanPass" class="md-addon md-addon-p">
+                                                <a id="addonPass" class=" waves-effect" onclick="mostrarPass(this)">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </span>
+                                            <small id="PassInfo" class="form-text text-muted red-text small">
+                                                Alerta: La clave es muy corta.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="md-form form-sm mb-5">
+                                            <i class="fas fa-lock prefix"></i>
+                                            <input type="password" id="claveUsuarioValidar" class="form-control form-control-sm validate"
+                                                disabled name="claveUsuarioValidar" onpaste="return false">
+                                            <label for="claveUsuarioValidar">Repita su clave</label>
+                                            <span id="spanPassVeri" class="md-addon md-addon-p ">
+                                                <a id="addonPassVeri" class=" waves-effect" onclick="mostrarPass(this)">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                            </span>
+                                            <small id="valPassInfo" class="form-text text-muted red-text small">
+                                                Alerta: Haga coinsidir las claves.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+                    </form>
+                    <div class="row">
+                        <div class="d-flex col-12">
+                            <div class="mr-auto" id="divAnterior">
+                                <button id="btnAnterior" class="btn btn-primary  btn-outline-primary btn-rounded" type=""
+                                    name="opcion" value="">
+                                    <i class="fas fa-arrow-left mr-1"></i>Anterior
+                                </button>
+                            </div>
+                            <div class="ml-auto " id="divSiguiente">
+                                <button id="btnSiguiente" class="btn btn-primary btn-rounded" type="" form="" name="opcion"
+                                    value="">Siquiente
+                                    <i class="fas fa-arrow-right ml-1"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
